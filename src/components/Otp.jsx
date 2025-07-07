@@ -6,12 +6,15 @@ function Otp() {
 
   const handleOtp = (e, index) => {
     const value = e.target.value;
-    const newFields = [...fields];
+    if(value>=0 && value<=9){
+      const newFields = [...fields];
     newFields[index] = value;
     if(index<fields.length-1 && value){
         otpInpRef.current[index+1].focus()
     }
     setFields(newFields);
+    }else return
+    
   };
 
   const handlekeydown = (e,index)=>{

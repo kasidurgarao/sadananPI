@@ -1,18 +1,15 @@
-import { useState } from 'react'
-import './App.css'
-import TrafficSignal from './components/TrafficSignal'
-
+import Accordian from './components/Accordian'
+import ColumnTable from './components/ColumnTable'
+import OptionSelector from './components/OptionSelector'
+import TelephoneFormatter from './components/TelephoneFormatter'
 function App() {
-
   return (
-    <>
-      {/* <TypeheadAutoSuggest/> */}
-      {/* <BusSeatSelector/> */}
-      {/* <NestedCheckbox/> */}
-      {/* <ModelPopUp/> */}
-      {/* <Infinity_scroller/> */}
-      <TrafficSignal/>
-    </>
+  <>
+  {/* <TelephoneFormatter/> */}
+  {/* <Accordian/> */}
+  {/* <ColumnTable/> */}
+  <OptionSelector/>
+  </>
   )
 }
 
