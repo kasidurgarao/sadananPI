@@ -7,15 +7,13 @@ let data = [
 const OptionSelector = () => {
   const [text, setText] = useState(data[0][0]);
   const [count, setCount] = useState(0);
+  const [selectOption, setSelectOption] = useState("");
 
   const getrandom = () => {
-    let newText = text;
-    while (newText === text) {
-      let index = Math.floor(Math.random() * data.length);
-      let subIndex = Math.floor(Math.random() * data[index].length);
-      newText = data[index][subIndex];
-    }
-    setText(newText);
+    let index = Math.floor(Math.random() * data.length);
+    let subIndex = Math.floor(Math.random() * data[index].length);
+    setText(data[index][subIndex]);
+    setSelectOption("");
   };
 
   const selecthandler = (e) => {
@@ -37,7 +35,11 @@ const OptionSelector = () => {
         <div className="flex gap-4">
           {data.map((ele, idx) => (
             <div key={idx}>
-              <select className="w-28 border" onChange={selecthandler}>
+              <select
+                className="w-28 border"
+                value={selectOption}
+                onChange={selecthandler}
+              >
                 <option value="select">select</option>
                 {ele.map((val, index) => (
                   <option value={val} key={index}>

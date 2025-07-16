@@ -1,16 +1,22 @@
-import Accordian from './components/Accordian'
-import ColumnTable from './components/ColumnTable'
-import OptionSelector from './components/OptionSelector'
-import TelephoneFormatter from './components/TelephoneFormatter'
+// App.js
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SeatSelection from './components/SeatSelection';
+import SeatDisplay from "./components/SeatDisplay";
+import { SeatProvider } from "./components/SeatContext";
+
+
 function App() {
   return (
-  <>
-  {/* <TelephoneFormatter/> */}
-  {/* <Accordian/> */}
-  {/* <ColumnTable/> */}
-  <OptionSelector/>
-  </>
-  )
+    <SeatProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<SeatSelection />} />
+          <Route path="/seats" element={<SeatDisplay />} />
+        </Routes>
+      </Router>
+    </SeatProvider>
+  );
 }
 
-export default App
+export default App;
